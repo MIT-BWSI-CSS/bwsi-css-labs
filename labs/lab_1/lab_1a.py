@@ -7,7 +7,7 @@ with your name. Then, save the code, add it to the staging area, and commit it t
 simulating changes: robot_speed
 """
 
-robot_speed = 5 # m/s
+robot_speed = 8 # m/s
 
 def main():
     print("Hello World!")
