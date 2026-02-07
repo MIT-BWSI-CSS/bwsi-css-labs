@@ -37,14 +37,43 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
     else:
         raise ValueError("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
 
+def sanitized_float(prompt = "Enter a number...") -> float:
+    """
+    Requests sanitized float from the user. Returns said float when it resolves
+    """
+    while True:
+        try:
+            x = float(input(prompt))
+            return x
+        except ValueError:
+            print("Invalid input, please try again.")
+
+def sanitized_operation(prompt = "Enter the operation (add, subtract, multiply, divide): ", valid_set = set()) -> str:
+    """
+    Returns sanitized string from valid_set to the user.
+    
+    :param prompt: Prompt to display to the user
+    :param valid_set: Valid set of strings to accept.
+    :return: String given by user out of set options.
+    :rtype: str
+    """
+    while True:
+        try:
+            x = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+            if x not in valid_set: raise Exception("Input not part of valid set") # invalid input
+            return x
+        except Exception:
+            print("Invalid input, please try again.")
+
+
 def main():
     
     print(f"===== Simple Calculator =====")
 
     # Ask the user for sample input    
-    num1 = float(input("Enter the first number: "))
-    num2 = float(input("Enter the second number: "))
-    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+    num1 = sanitized_float("Enter the first number: ")
+    num2 = sanitized_float("Enter the second number: ")
+    operation = sanitized_operation("Enter the operation (add, subtract, multiply, divide): ", {"add", "subtract", "multiply", "divide"})
 
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
