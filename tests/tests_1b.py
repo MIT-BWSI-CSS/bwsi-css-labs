@@ -8,22 +8,22 @@ import pytest
 from labs.lab_1.lab_1b import simple_calculator
 
 def test_addition():
-    assert simple_calculator("add", 5, 3) == 8          # Test for positive numbers
+    assert simple_calculator("add", 0, 9) == 9          # Test for positive numbers
     assert simple_calculator("add", -2, 2) == 0         # Test for negative and positive number
     assert simple_calculator("add", 0, 0) == 0          # Test for zero addition
 
 def test_subtraction():
-    assert simple_calculator("subtract", 5, 3) == 2     # Test for positive numbers
+    assert simple_calculator("subtract", 17, -3) == 20     # Test for positive numbers
     assert simple_calculator("subtract", -2, -2) == 0   # Test for negative numbers
     assert simple_calculator("subtract", 0, 5) == -5    # Test for zero minuend
 
 def test_multiplication():
-    assert simple_calculator("multiply", 5, 3) == 15    # Test for positive numbers
+    assert simple_calculator("multiply", -1, 1) == -1    # Test for positive numbers
     assert simple_calculator("multiply", -2, 2) == -4   # Test for negative and positive number
     assert simple_calculator("multiply", 0, 100) == 0   # Test for multiplication by zero
 
 def test_division():
-    assert simple_calculator("divide", 6, 3) == 2       # Test for positive numbers
+    assert simple_calculator("divide", 8, 4) == 2       # Test for positive numbers
     assert simple_calculator("divide", -4, 2) == -2     # Test for negative and positive number
     assert simple_calculator("divide", 5, 2) == 2.5     # Test for division resulting in float
 
