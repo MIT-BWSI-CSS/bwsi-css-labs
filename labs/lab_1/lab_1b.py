@@ -59,7 +59,7 @@ while True:
     # Ask the user for the operation
     while True:
         operation = input("Enter the operation (add, subtract, multiply, divide): ").lower()
-        if operation in ["add", "subtract", "multiply", "divide"]:
+        if operation == "add" or operation == "subtract" or operation == "multiply" or operation == "divide":
             break
         else:
             print("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
