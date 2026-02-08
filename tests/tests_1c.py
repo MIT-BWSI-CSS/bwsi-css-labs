@@ -8,7 +8,7 @@ import pytest
 from labs.lab_1.lab_1b import simple_calculator
 from labs.lab_1.lab_1c import max_subarray_sum
 
-def test_addition():
+def test_max():
     assert max_subarray_sum([-2,1,-3,4,-1,2,1,-5,4]) == 6                # Test for empty operation
 
 if __name__ == "__main__":
