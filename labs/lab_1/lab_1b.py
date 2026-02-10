@@ -43,7 +43,18 @@ def main():
 
     # Ask the user for sample input    
     num1 = float(input("Enter the first number: "))
+    try:
+        num1 = int(num1)
+    except ValueError:
+        print("That's not a number")
+        return
+
     num2 = float(input("Enter the second number: "))
+    try:
+        num2 = int(num2)
+    except ValueError:
+        print("That's not a number")
+        return
     operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
 
     # Perform the calculation and display the result
