@@ -9,7 +9,7 @@ The robot speed should be 8/ms
 def main():
     print("Hello World!")
     robot_speed = 5 #ms
-    name = "CungDo" # TODO: Insert your name between the double quotes
+    name = "CungDo"
 
     print(f"{name}, Welcome to the CSS course!")
 
