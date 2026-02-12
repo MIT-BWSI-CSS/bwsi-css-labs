@@ -61,7 +61,9 @@ def main():
         if (isFloat(num2)):
             num2 = float(num2)
             break
-    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+    operation = "poop"
+    while (not(operation=="add" or operation=="subtract" or operation=="multiply" or operation=="divide")):
+        operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
 
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
