@@ -49,6 +49,13 @@ def getNumber(msg):
 
     return number
 
+def getOperation():
+    while True:
+        operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+        if (operation == "add" or operation == "subtract" or operation == "multiply" or operation == "divide"):
+            return operation
+        print("Invalid Operation.")
+
 def main():
     
     print(f"===== Simple Calculator =====")
@@ -56,7 +63,7 @@ def main():
     # Ask the user for sample input    
     num1 = getNumber("Enter the first number: ")
     num2 = getNumber("Enter the second number: ")
-    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+    operation = getOperation()
 
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
