@@ -44,6 +44,14 @@ def request_sanitized_number(prompt: str) -> float:
             return number
         except ValueError:
             print("Invalid input. Please enter a valid number.")
+
+def request_sanitized_operator(prompt: str) -> float:
+    while True:
+        try:
+            operator = (input(prompt))
+            return operator
+        except ValueError:
+            print("Invalid input. Please enter a valid operator.")
 def main():
     
     print(f"===== Simple Calculator =====")
