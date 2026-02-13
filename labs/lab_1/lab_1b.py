@@ -66,8 +66,11 @@ def main():
     operation = getOperation()
 
     # Perform the calculation and display the result
-    result = simple_calculator(operation, num1, num2)
-    print(f"The result of {operation}ing {num1} and {num2} is: {result}")
+    try:
+        result = simple_calculator(operation, num1, num2)
+        print(f"The result of {operation}ing {num1} and {num2} is: {result}")
+    except ValueError:
+        print("Cannot divide by 0.")
 
 
 if __name__ == "__main__":
