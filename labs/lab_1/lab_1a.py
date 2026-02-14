@@ -7,6 +7,7 @@ with your name. Then, save the code, add it to the staging area, and commit it t
 This is to simulate a change made on a robot: robot_speed = 8 # m/s
 """
 
+
 def main():
     print("Hello World!")
 
@@ -17,6 +18,7 @@ def main():
     introduction = "Hello! My name is Aarush Joglekar, and I'm a sophomore from California. I am a part of my school's FRC team (First Robotics Competition), and am super interested in robotics. I also have played the piano for 11 years. I'm excited to begin this course!"
 
     print(introduction)
+
 
 if __name__ == "__main__":
     main()
