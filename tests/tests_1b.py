@@ -27,6 +27,9 @@ def test_division():
     assert simple_calculator("divide", -4, 2) == -2 # Test for negative and positive number
     assert simple_calculator("divide", 5, 2) == 2.5 # Test for division resulting in float
 
+def test_float_operation():
+    assert abs(simple_calculator("subtract", 3.3, 3.2) - 0.1) < 1e-6 # Test for operations on floats
+
 def test_division_by_zero():
     with pytest.raises(ValueError):
         simple_calculator("divide", 5, 0) # Test division by zero
@@ -38,5 +41,4 @@ def test_invalid_operation():
         simple_calculator("", 5, 3) # Test for empty operation
 
 if __name__ == "__main__":
-    print("HI")
     pytest.main()
