@@ -10,7 +10,7 @@ def main():
     print("Hello World!")
 
     name = "Robert Sultan" # TODO: Insert your name between the double quotes
-    print("I am in tenth grade")
+    print("I am in tenth grade and I live in Maryland")
     print(f"{name}, Welcome to the CSS course!")
     
 
