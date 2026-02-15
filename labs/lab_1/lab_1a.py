@@ -7,10 +7,20 @@ with your name. Then, save the code, add it to the staging area, and commit it t
 
 def main():
     print("Hello World!")
+    intro = """Hello_everyone!_My name_is_Andrea_Urszinyi,_and_I’m_a_sophomore_at_Triton_Regional_High_School_in_Massachusetts._Some_fun_facts_about_me_include:_Im_an_11-time_National_Karate_Champion_in_the_KRANE_Nationals_circuit,_I_speak_three_languages,_and_I_play_the_flute!
 
+I really enjoy tackling challenges step by step and figuring things out even when they don’t make sense right away.
+
+I’m incredibly passionate about molecular biology — particularly CRISPR and its potential to treat pancreatic cancer in solid tumors. 
+I’m excited to start building the computer science skills that support the kind of research I want to go into!
+
+I’m really happy to be here and can’t wait to learn and work with all of you!
+
+I don’t have much experience in computer science yet, but I’m excited for this opportunity! I’m really looking forward to learning alongside all of you!"""
     name = "Andrea Urszinyi" # TODO: Insert your name between the double quotes
 
     print(f"{name}, Welcome to the CSS course!")
+    print(intro)
 
 if __name__ == "__main__":
     main()
