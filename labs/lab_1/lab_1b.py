@@ -22,7 +22,11 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
     Returns:
         float: The result of the operation.
     """
-
+    try:
+        num1 = float(num1)
+        num2 = float(num2)
+    except ValueError:
+        raise ValueError("Invalid input. Please enter a valid number.")
     if operation == "add":
         return num1 + num2
     elif operation == "subtract":
