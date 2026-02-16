@@ -36,6 +36,15 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
             raise ValueError("Cannot divide by zero.")
     else:
         raise ValueError("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
+    
+def sanitized_num(prompt str) -> float:
+
+    try:
+        number = float(input(prompt))
+        return number
+    
+    except ValueError:
+        print("invalid num, try again.")
 
 def main():
     
