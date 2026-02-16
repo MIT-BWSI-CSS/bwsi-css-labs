@@ -42,7 +42,7 @@ def request_sanitized_number(prompt: str) -> float:
     Function to request a sanitized number for the operation
     
     Returns:
-        float: the sanitized numeric input by the user
+        float: The sanitized numeric input by the user
     """
     while True:
         try: 
