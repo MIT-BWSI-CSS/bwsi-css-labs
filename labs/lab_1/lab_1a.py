@@ -1,4 +1,4 @@
-#This is to simulate a change made on a robot: robot_speed = 5 # m/s
+#This is to simulate a change made on a robot: robot_speed = 5 # m/s3
 """
 lab_1a.py
 
