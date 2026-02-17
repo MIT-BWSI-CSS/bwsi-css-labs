@@ -16,7 +16,8 @@ I’m excited to start building the computer science skills that support the kin
 
 I’m really happy to be here and can’t wait to learn and work with all of you!
 
-I don’t have much experience in computer science yet, but I’m excited for this opportunity! I’m really looking forward to learning alongside all of you!"""
+I don’t have much experience in computer science yet, but I’m excited for this opportunity! I’m really looking forward to learning alongside all of you!
+"""
     name = "Andrea Urszinyi" # TODO: Insert your name between the double quotes
 
     print(f"{name}, Welcome to the CSS course!")
