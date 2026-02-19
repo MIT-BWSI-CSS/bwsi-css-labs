@@ -1,6 +1,6 @@
 """
 lab_1b.py
-reccomit
+Recommit
 This is a script that implements a simple calculator. It takes two numbers and an operation,
 then performs the operation and returns the result. 
 
@@ -22,20 +22,24 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
     Returns:
         float: The result of the operation.
     """
-
-    if operation == "add":
-        return num1 + num2
-    elif operation == "subtract":
-        return num1 - num2
-    elif operation == "multiply":
-        return num1 * num2
-    elif operation == "divide":
-        if num2 != 0:
-            return num1 / num2
+    while True:
+        if operation == "add":
+            return num1 + num2
+        elif operation == "subtract":
+            return num1 - num2
+        elif operation == "multiply":
+            return num1 * num2
+        elif operation == "divide":
+            if num2 != 0:
+                return num1 / num2
+            else:
+                raise ValueError("Cannot divide by zero.")
         else:
-            raise ValueError("Cannot divide by zero.")
-    else:
-        raise ValueError("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
+            try:
+                print("Invalid operation")
+                operation = input("What is your operation: ")
+            except ValueError:
+                continue
 def input_sanitized_number(prompt: str) -> float:
     while True:
         try:
