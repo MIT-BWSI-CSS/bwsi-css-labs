@@ -10,9 +10,26 @@ and prints the result to the terminal window.
 """
 
 def simple_calculator(operation: str, num1: float, num2: float) -> float:
+def sanitize_input(prompt: str) -> float:
+    """
+    Function thattakes in a user input and returns a valid number
     """
     Function that takes in two numbers and an operation (add, subtract, multiply, divide),
     then performs the operation on the two numbers and returns the result.
+
+    Args:
+        str: A prompt for asking the user
+
+    Returns:
+        float: The sanitized numeric input by the user
+    """
+
+    while True:
+        try:
+            number = float(input(prompt))
+            reuturn number
+                     except ValueError:
+                         print(f"Invalid input. Please enter a valid number.")
 
     Args:
         operation (str): The operation to perform ("add", "subtract", "multiply", "divide").
@@ -36,7 +53,19 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
             raise ValueError("Cannot divide by zero.")
     else:
         raise ValueError("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
+def request_sanitized_number(prompt: str) -> float:
+    """
+    Function to request and sanitize user input for operation
 
+    Returns:
+        float: The sanitized numeric input by the user.
+    """
+    while True:
+        try:
+            number = float(input(prompt))
+            return number
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
 def main():
     
     print(f"===== Simple Calculator =====")
