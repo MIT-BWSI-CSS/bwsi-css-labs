@@ -8,6 +8,14 @@ The script asks the user to input the numbers and the operation to be performed,
 and prints the result to the terminal window.
 
 """
+def requestsanitizednum(prompt: str) -> float:
+    while True:
+        try:
+            number = float (input (prompt)) 
+            return number
+        except ValueError:
+           print("Invalid input. Please enter a valid number.")
+
 
 def simple_calculator(operation: str, num1: float, num2: float) -> float:
     """
@@ -42,8 +50,8 @@ def main():
     print(f"===== Simple Calculator =====")
 
     # Ask the user for sample input    
-    num1 = float(input("Enter the first number: "))
-    num2 = float(input("Enter the second number: "))
+    num1 = requestsanitizednum("Enter the first number: ")
+    num2 = requestsanitizednum("Enter the second number: ")
     operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
 
     # Perform the calculation and display the result
