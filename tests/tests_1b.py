@@ -11,11 +11,13 @@ def test_addition():
     assert simple_calculator("add", 5, 3) == 8          # Test for positive numbers
     assert simple_calculator("add", -2, 2) == 0         # Test for negative and positive number
     assert simple_calculator("add", 0, 0) == 0          # Test for zero addition
+    assert simple_calculator("add", -2, -4) == -6       # Test for negative numbers
 
 def test_subtraction():
     assert simple_calculator("subtract", 5, 3) == 2     # Test for positive numbers
     assert simple_calculator("subtract", -2, -2) == 0   # Test for negative numbers
     assert simple_calculator("subtract", 0, 5) == -5    # Test for zero minuend
+    assert simple_calculator("subtract", 0, -5) == 5 
 
 def test_multiplication():
     assert simple_calculator("multiply", 5, 3) == 15    # Test for positive numbers
