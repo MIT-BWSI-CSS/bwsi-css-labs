@@ -6,8 +6,7 @@ then performs the operation and returns the result.
 
 The script asks the user to input the numbers and the operation to be performed,
 and prints the result to the terminal window.
-
-"""
+"""   
 
 def simple_calculator(operation: str, num1: float, num2: float) -> float:
     """
@@ -23,6 +22,7 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
         float: The result of the operation.
     """
 
+
     if operation == "add":
         return num1 + num2
     elif operation == "subtract":
@@ -37,13 +37,21 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
     else:
         raise ValueError("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
 
+def request_valid_number(prompt: str) -> float:
+    while True:
+        try:
+            number = float(input(prompt))
+            return number
+        except ValueError:
+            print("Please input a valid number")
+
 def main():
     
     print(f"===== Simple Calculator =====")
 
     # Ask the user for sample input    
-    num1 = float(input("Enter the first number: "))
-    num2 = float(input("Enter the second number: "))
+    num1 = request_valid_number("Enter the first number: ")
+    num2 = request_valid_number("Enter the second number: ")
     operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
 
     # Perform the calculation and display the result
