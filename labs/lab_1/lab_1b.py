@@ -43,6 +43,13 @@ def ask_for_number_input(prompt: str) -> float:
             return number
         except ValueError:
             print("Invalid input. Please enter a valid number.")
+def ask_for_operation_input(prompt: str) -> str:
+    while True:
+        operation=str(input(prompt))
+        if operation in ["add", "subtract", "multiply", "divide"]:
+            return operation
+        else:
+            print("Invalid input. Please enter a valid operation (add, subtract, multiply, divide).")
 def main():
     
     print(f"===== Simple Calculator =====")
@@ -50,7 +57,7 @@ def main():
     # Ask the user for sample input    
     num1 = ask_for_number_input("Enter the first number: ")
     num2 = ask_for_number_input("Enter the second number: ")
-    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+    operation = ask_for_operation_input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
 
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
