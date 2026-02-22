@@ -37,7 +37,7 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
         else:
             try:
                 print("Invalid operation")
-                operation = input("What is your operation: ")
+                operation = input("What is your operation: ").strip().lower()
             except ValueError:
                 continue
 def input_sanitized_number(prompt: str) -> float:
