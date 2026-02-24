@@ -46,7 +46,7 @@ def request_sanitized_number(prompt: str) -> float:
     """
     while True:
         try:
-            number = float(number(prompt))
+            number = float(input(prompt))
             return number
         except ValueError:
             print("Invalid input. Enter a valid number.")
