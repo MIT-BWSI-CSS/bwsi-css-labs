@@ -8,7 +8,7 @@ import pytest
 from labs.lab_1.lab_1b import simple_calculator
 
 def test_addition():
-    assert simple_calculator("add", 5, 3) == 8          # Test for positive numbers
+    assert simple_calculator("add", 5, 3) == 8        # Test for positive numbers
     assert simple_calculator("add", -2, 2) == 0         # Test for negative and positive number
     assert simple_calculator("add", 0, 0) == 0          # Test for zero addition
 
