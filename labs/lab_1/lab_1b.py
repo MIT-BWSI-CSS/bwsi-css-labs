@@ -44,22 +44,27 @@ def test_invalid_operation():
         simple_calculator("", 5, 3)
     with pytest.raises(ValueError, match="Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide."):
         simple_calculator("", -1, 3)
-        
+            
+def request_sanitiized_number(prompt: str) -> float:
+    while True:
+        try:
+            number = float(input(prompt))
+            return number
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
 def main():
     
     # print(f"===== Simple Calculator =====")
     test_invalid_operation()
 
     # Ask the user for sample input    
-<<<<<<< Updated upstream
-    num1 = float(input("Enter the first number: "))
-    num2 = float(input("Enter the second number: "))
+    num1 = request_sanitiized_number("Enter the first number: ")
+    num2 = request_sanitiized_number("Enter the second number: ")
     operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
-=======
     # num1 = request_sanitiized_number("Enter the first number: ")
     # num2 = request_sanitiized_number("Enter the second number: ")
     # operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
->>>>>>> Stashed changes
 
     # # Perform the calculation and display the result
     # result = simple_calculator(operation, num1, num2)
