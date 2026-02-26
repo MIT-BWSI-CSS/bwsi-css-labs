@@ -53,3 +53,17 @@ def main():
 
 if __name__ == "__main__":
     main()
+def request_sanitized_number(prompt: str) -> float: 
+    while True:
+        try: 
+            number = float(input(prompt))
+            return number
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
+def main():
+    print(f"===== Simple Calcular =====")
+
+    num1 = request_sanitized_number("Enter the first number: ")
+    num2 = request_sanitized_number("Enter the second number: ")
+    operation = input("Enter the operation (add, subtract, multiply, divide)")
