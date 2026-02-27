@@ -2,7 +2,7 @@
 lab_1b.py
 
 This is a script that implements a simple calculator. It takes two numbers and an operation,
-then performs the operation and returns the result. 
+then performs the operation and returns the result.
 
 The script asks the user to input the numbers and the operation to be performed,
 and prints the result to the terminal window.
@@ -52,7 +52,16 @@ def request_sanitized_number(prompt: str) -> float:
             number = float(input(prompt))
             return number
         except ValueError:
-            print("Invalid input. Please entoer a valid number.")
+            print("Invalid input. Please enter a valid number.")
+
+
+def request_sanitized_operation(prompt):
+    valid_operation = ["add", "subtract", "multiply", "divide"]
+    while True:
+        op = input(prompt).strip().lower()
+        if op in valid_operation:
+            return op
+        print(f"Invalid question. Please choose: {','.join(valid_operation)}")
 
 
 def main():
@@ -62,8 +71,13 @@ def main():
     # Ask the user for sample input
     num1 = request_sanitized_number("Enter the first number: ")
     num2 = request_sanitized_number("Enter the second number: ")
-    operation = input(
+    operation = request_sanitized_operation(
         "Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+
+    # opt division by zero check too!
+    if operation == "divide" and num2 == 0:
+        print("Cannot divide by zero!")
+        return
 
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
