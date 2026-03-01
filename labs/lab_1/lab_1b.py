@@ -38,17 +38,32 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
         raise ValueError("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
 
 def main():
-    
     print(f"===== Simple Calculator =====")
 
-    # Ask the user for sample input    
-    num1 = float(input("Enter the first number: "))
-    num2 = float(input("Enter the second number: "))
-    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+    # 1. Robust Number Input
+    while True:
+        try:
+            num1 = float(input("Enter the first number: "))
+            num2 = float(input("Enter the second number: "))
+            break # Exit loop if conversion is successful
+        except ValueError:
+            print("Invalid input! Please
+            e enter numeric values only.")
 
-    # Perform the calculation and display the result
-    result = simple_calculator(operation, num1, num2)
-    print(f"The result of {operation}ing {num1} and {num2} is: {result}")
+    # 2. Robust Operation Input
+    valid_ops = ["add", "subtract", "multiply", "divide"]
+    while True:
+        operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+        if operation in valid_ops:
+            break
+        print(f"Invalid operation! Please choose from: {', '.join(valid_ops)}")
+
+    # 3. Safe Execution
+    try:
+        result = simple_calculator(operation, num1, num2)
+        print(f"The result of {operation}ing {num1} and {num2} is: {result}")
+    except ValueError as e:
+        print(f"Error: {e}")
 
 
 if __name__ == "__main__":
