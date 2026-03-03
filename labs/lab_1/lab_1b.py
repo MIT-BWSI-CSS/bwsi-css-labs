@@ -8,7 +8,7 @@ The script asks the user to input the numbers and the operation to be performed,
 and prints the result to the terminal window.
 
 """
-
+ 
 def simple_calculator(operation: str, num1: float, num2: float) -> float:
     """
     Function that takes in two numbers and an operation (add, subtract, multiply, divide),
@@ -37,6 +37,14 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
     else:
         raise ValueError("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
 
+
+def request_sanitize_number(prompt: str) -> float:    
+    while True:
+        try: 
+            number = float(input(prompt))
+            return number 
+        except: ValueError
+        print("Invalid input. Please enter a valid number")
 def main():
     
     print(f"===== Simple Calculator =====")
