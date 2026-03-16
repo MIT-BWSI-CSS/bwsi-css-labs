@@ -37,18 +37,26 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
     else:
         raise ValueError("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
 
+
+
 def main():
     
     print(f"===== Simple Calculator =====")
 
-    # Ask the user for sample input    
-    num1 = float(input("Enter the first number: "))
-    num2 = float(input("Enter the second number: "))
-    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+    while True:
+        try:
+            operation = input("Enter operation: ").lower()
 
-    # Perform the calculation and display the result
-    result = simple_calculator(operation, num1, num2)
-    print(f"The result of {operation}ing {num1} and {num2} is: {result}")
+            num1 = float(input("Enter 1st num: "))
+            num2 = float(input("Enter 2nd num: "))
+
+            result = simple_calculator(operation, num1, num2)
+            print("Result:", result)
+            break
+
+        except ValueError as e:
+            print("Error:", e)
+            print("Try again\n")
 
 
 if __name__ == "__main__":
