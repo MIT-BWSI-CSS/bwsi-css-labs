@@ -41,6 +41,7 @@ def request_sanitized_number(prompt: str) -> float:
     """
     Function to request and sanitize user input for the operation
 
+    
     Returns:
         float: The sanitized numeric input by the user.
     """
