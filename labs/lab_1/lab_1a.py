@@ -7,6 +7,7 @@ with your name. Then, save the code, add it to the staging area, and commit it t
 
 def main():
     print("Hello World!")
+    print("Hello, my name is Pavel Pomozov and I am a high school junior from San Jose, California!")
 
     name = "Pavel Pomozov"
 
