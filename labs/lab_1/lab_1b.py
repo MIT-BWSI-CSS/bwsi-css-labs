@@ -1,4 +1,4 @@
-"""
+"""TEST
 lab_1b.py
 
 This is a script that implements a simple calculator. It takes two numbers and an operation,
@@ -36,6 +36,15 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
             raise ValueError("Cannot divide by zero.")
     else:
         raise ValueError("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
+
+def request_Sanitized_number(prompt: str) -> float:
+   
+    while True:
+        try:
+            number = float(input(prompt))
+            return number
+        except ValueError:
+            print("Invalid input")
 
 def main():
     
