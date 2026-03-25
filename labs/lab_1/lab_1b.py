@@ -23,6 +23,10 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
         float: The result of the operation.
     """
 
+    operation = operation.strip().lower()  # Normalize the operation string
+
+    if not isinstance(num1, (int, float)) or not isinstance(num2, (int, float)):
+        raise ValueError("Both num1 and num2 must be numeric values.")
     if operation == "add":
         return num1 + num2
     elif operation == "subtract":
@@ -39,8 +43,6 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
 
 def main():
     
-    print(f"===== Simple Calculator =====")
-
     # Ask the user for sample input    
     num1 = float(input("Enter the first number: "))
     num2 = float(input("Enter the second number: "))
