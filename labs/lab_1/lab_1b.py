@@ -51,7 +51,12 @@ def main():
     # Ask the user for sample input    
     num1 = requestSantizedNumber("Enter the first number: ")
     num2 = requestSantizedNumber("Enter the second number: ")
-    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+    while True:
+        operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+        if operation in ["add", "subtract", "multiply", "divide"]:
+            break
+        else:
+            print("Invalid operation. Please enter 'add', 'subtract', 'multiply', or 'divide'.")
 
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
