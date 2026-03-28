@@ -1,3 +1,6 @@
+
+
+
 """
 lab_1a.py
 
@@ -8,9 +11,10 @@ with your name. Then, save the code, add it to the staging area, and commit it t
 def main():
     print("Hello World!")
 
-    name = "" # TODO: Insert your name between the double quotes
+    name = "Aaryav"
 
     print(f"{name}, Welcome to the CSS course!")
+    print("Hello my name is Aaryav and I making my second commit to the Git tree!")
 
 if __name__ == "__main__":
     main()
