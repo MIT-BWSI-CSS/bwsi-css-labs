@@ -9,6 +9,40 @@ and prints the result to the terminal window.
 
 """
 
+def check_num_input() -> float:
+    """
+    Function to check if the user input is valid. It ensures that the operation is one of the
+    allowed operations and that the numbers are valid floats.
+
+    Returns:
+        tuple: A tuple containing the operation (str), num1 (float), and num2 (float).
+    """
+    valid_operations = {"add", "subtract", "multiply", "divide"}
+
+    while True:
+        try:
+            num = float(input(""))
+            return num
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
+def check_operation_input() -> str:
+    """
+    Function to check if the user input for the operation is valid. It ensures that the operation is one of the
+    allowed operations.
+
+    Returns:
+        str: The valid operation input by the user.
+    """
+    valid_operations = {"add", "subtract", "multiply", "divide"}
+
+    while True:
+        operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+        if operation in valid_operations:
+            return operation
+        else:
+            print("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
+
 def simple_calculator(operation: str, num1: float, num2: float) -> float:
     """
     Function that takes in two numbers and an operation (add, subtract, multiply, divide),
@@ -42,9 +76,11 @@ def main():
     print(f"===== Simple Calculator =====")
 
     # Ask the user for sample input    
-    num1 = float(input("Enter the first number: "))
-    num2 = float(input("Enter the second number: "))
-    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+    print("Enter the first number: ", end="")
+    num1 = check_num_input()
+    print("Enter the second number: ", end="")
+    num2 = check_num_input()
+    operation = check_operation_input()
 
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
