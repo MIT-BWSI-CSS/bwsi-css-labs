@@ -9,16 +9,20 @@ and prints the result to the terminal window.
 
 """
 def snumber(prompt):
-
     while True:
-
         try:
             number = float(input(prompt))
             return number
         except ValueError:
             print("Invalid input. Please enter a number")
 
-
+def op(prompt):
+    while True:
+        operator = input(prompt).strip().lower()
+        if operator in ("add", "subtract", "multiply", "divide"):
+            return operator
+        else:
+            print("Invalid input. Please type in a valid operator")
 
 def simple_calculator(operation: str, num1: float, num2: float) -> float:
     """
@@ -33,7 +37,6 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
     Returns:
         float: The result of the operation.
     """
-
     if operation == "add":
         return num1 + num2
     elif operation == "subtract":
@@ -41,6 +44,7 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
     elif operation == "multiply":
         return num1 * num2
     elif operation == "divide":
+
         if num2 != 0:
             return num1 / num2
         else:
@@ -55,12 +59,11 @@ def main():
     # Ask the user for sample input    
     num1 = snumber("Enter the first number: ")
     num2 = snumber("Enter the second number: ")
-    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+    operation = op("Enter the operation (add, subtract, multiply, divide): ")
 
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
     print(f"The result of {operation}ing {num1} and {num2} is: {result}")
-
 
 if __name__ == "__main__":
     main()
