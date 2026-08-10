@@ -35,19 +35,31 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
         else:
             raise ValueError("Cannot divide by zero.")
     else:
-        raise ValueError("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
+        return "inv"
+
+def sanitize(num):
+    san_num = num
+    if type(num) is str:
+        san_num = "".join([char for char in num if char.isdigit()])
+        san_num = int(san_num)
+
+    return(san_num)
 
 def main():
     
     print(f"===== Simple Calculator =====")
 
     # Ask the user for sample input    
-    num1 = float(input("Enter the first number: "))
-    num2 = float(input("Enter the second number: "))
+    num1 = float(sanitize(input("Enter the first number: ")))
+    num2 = float(sanitize(input("Enter the second number: ")))
     operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
 
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
+    while (result == "inv"):
+        print("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
+        operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+        result = simple_calculator(operation, num1, num2)
     print(f"The result of {operation}ing {num1} and {num2} is: {result}")
 
 
